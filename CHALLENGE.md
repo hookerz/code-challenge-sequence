@@ -19,7 +19,7 @@ Please complete as many steps as you are able to before your interview. Good luc
 1. Replace the image in the **hero section** with the **animation**.
 1. Make the **animation** play through when the page loads.
 1. Make the "Jump to cards" **button** scroll the **cards section** into view.
-1. Tag @draeton and @chrisathook in a pull request when you are ready to review.
+1. Mention `@hookerz/reviews` in a pull request when you are ready to review.
 
 ### Extra credit
 
