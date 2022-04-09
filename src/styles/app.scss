@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 
 /**
  * Sass Importer
@@ -22,26 +24,40 @@ body {
 // Partial View SASS files
 // @import url('./partials/topContainer');
 
+// Colors
+$black: hsl(0, 0, 5%); // Easier on the eyes
+
 
 // Breakpoints
-$breakpoints: (
-	small: 375px,
-	medium: 768px,
-	large: 1440px,
-);
+$small: 375px;
+$medium: 768px;
+$large: 1440px;
 
 .TopContainer {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background-color: blue;
+  background-color: $black;
 
   &__title {
-    margin-bottom: 20px;
-    font-size: 36px;
+    margin: 120px 0 20px 0;
+    font-size: 64px;
     color: white;
+    font-weight: 700;
+    text-align: center;
+
+    @media only screen and (max-width: $large) {
+      font-size: 72px;
+    }
+
+    @media only screen and (max-width: $medium) {
+      font-size: 64px;
+    }
+
+    @media only screen and (max-width: $small) {
+      font-size: 48px;
+    }
   }
 
   &__buttonContainer {
