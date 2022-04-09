@@ -7,7 +7,7 @@
 */
 
 // Import Global Partials
-@import url('./_settings.scss');
+// @import url('./settings');
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 html,
@@ -20,4 +20,40 @@ body {
 }
 
 // Partial View SASS files
-@import url('./partials/_topContainer.scss');
+// @import url('./partials/topContainer');
+
+
+// Breakpoints
+$breakpoints: (
+	small: 375px,
+	medium: 768px,
+	large: 1440px,
+);
+
+.TopContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: blue;
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: white;
+  }
+
+  &__buttonContainer {
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 150px;
+    color: white;
+    > .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+    }
+  }
+}
