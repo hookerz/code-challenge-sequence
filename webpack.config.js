@@ -8,7 +8,7 @@ const { merge } = require('webpack-merge');
 
 const base = {
   entry: {
-    temp: ['scripts/app.ts'],
+    temp: ['scripts/app.js'],
   },
   context: path.resolve(__dirname, 'src'),
   output: {

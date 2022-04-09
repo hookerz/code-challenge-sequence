@@ -6,7 +6,7 @@
  */
 
 export class Animation {
-  public start(container: HTMLElement | null): void {
+  start(container) {
     if (!container) {
       throw new Error('no container');
     }

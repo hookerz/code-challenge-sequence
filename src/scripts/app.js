@@ -9,7 +9,7 @@ import '../styles/app.scss';
 
 import { Animation } from './animation';
 
-const animation: Animation = new Animation();
+const animation = new Animation();
 const app = document.getElementById('app');
 
 if (app) {
