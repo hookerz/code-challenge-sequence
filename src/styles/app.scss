@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
-/*
- * TODO
- * Replace this code with your own to
- * implement the functionality described in
- * CHALLENGE.md
- */
+/**
+ * Sass Importer
+ *
+ * Select the SASS partials to be compiled for this project. SASS files
+ * are compiled and included in the order they are listed.
+*/
+
+// Import Global Partials
+@import url('./_settings.scss');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 html,
 body {
@@ -15,3 +18,6 @@ body {
 body {
   font: 20px 'Lato', sans-serif;
 }
+
+// Partial View SASS files
+@import url('./partials/_topContainer.scss');

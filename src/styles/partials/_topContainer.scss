@@ -1,0 +1,27 @@
+.TopContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 36px;
+    color: white;
+  }
+
+  &__buttonContainer {
+    border: 2px solid white;
+    border-radius: 5px;
+    width: 150px;
+    color: white;
+    > .button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 35px;
+    }
+  }
+}
