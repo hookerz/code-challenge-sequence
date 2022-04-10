@@ -69,25 +69,13 @@ $large: 1440px;
     > .button {
       font-size: 24px;
       font-weight: 700;
-
-      // @media only screen and (max-width: $medium) {
-      //   height: 56px;
-      //   width: 200px;
-      //   font-size: 22px;
-      // }
-
-      // @media only screen and (max-width: $small) {
-      //   height: 48px;
-      //   width: 184px;
-      //   font-size: 18px;
-      // }
     }
   }
   
   @media only screen and (max-width: $medium) {
     &__buttonContainer {
       height: 56px;
-      width: 200px;
+      width: 184px;
       > .button {
         font-size: 22px;
       }
@@ -97,7 +85,7 @@ $large: 1440px;
   @media only screen and (max-width: $small) {
     &__buttonContainer {
       height: 48px;
-      width: 184px;
+      width: 161px;
       > .button {
         font-size: 18px;
       }
