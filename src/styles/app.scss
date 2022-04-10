@@ -1,6 +1,3 @@
-@use 'sass:map';
-
-
 /**
  * Sass Importer
  *
@@ -26,9 +23,10 @@ body {
 
 // Colors
 $black: #000000;
-$grey: #222222;
+$grey-1: #424B4A;
+$grey-2: #222222;
 $white: #FFFFFF;
-
+$blue: #2EC4B6;
 
 // Breakpoints
 $small: 375px;
@@ -114,27 +112,99 @@ $large: 1440px;
 }
 
 .BottomContainer {
-  height: 1024px;
-  background-color: $grey;
-
-  @media only screen and (max-width: $medium) {
-    height: 1367px;
-  }
-
-  @media only screen and (max-width: $small) {
-    height: 1921px;
-  }
-
-
+  height: auto;
+  background-color: $grey-2;
 
   // Unicode star, couldn't find asset for original
-  .StarContainer {
+  &__starContainer {
     display: flex;
     justify-content: center;
-    padding-top: 120px;
+    padding: 120px 0;
     > span {
       font-size: 60px;
       color: white;
+    }
+  }
+
+  &__box {
+    color: white;
+    background-color: $grey-1;
+    padding: 36px;
+
+    &:nth-child(1) {
+      background-color: $blue; 
+    }
+  }
+
+  @media only screen and (min-width: $medium) {
+    &__grid {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    &__box {
+      min-height: 433px;
+      max-width: 389px;
+      > h1 {
+        font-size: 36px;
+        max-width: 279px;
+      }
+      > p {
+        font-size: 20px;
+        max-width: 316px;
+      }
+    }
+  }
+
+  @media only screen and (min-width: $small) and (max-width: $medium) {
+    &__grid {
+      margin: 0 40px;
+      display: grid;
+      max-width: 611px;
+      justify-content: center;
+      grid-template-areas:
+        "box1 box1"
+        "box2 box3";
+        row-gap: 60px;
+        column-gap: 60px;
+    }
+
+    &__box:nth-of-type(1){
+      min-height: 278px;
+      grid-area: box1;
+      > h1, p {
+        max-width: 551px;
+      }
+    }
+    &__box:nth-of-type(2){
+      grid-area: box2;
+      max-width: 275px;
+    }
+    &__box:nth-of-type(3){
+      grid-area: box3;
+      max-width: 275px;
+    }
+  }
+
+  @media only screen and (max-width: $small) {
+    &__grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    &__box {
+      max-width: 258px;
+      min-height: 399px;
+      margin: 40px 40px 0 40px;
+
+      > h1 {
+        font-size: 32px;
+      }
+
+      > p {
+        font-size: 16px;
+      }
     }
   }
 }
