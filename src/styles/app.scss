@@ -26,6 +26,7 @@ body {
 
 // Colors
 $black: #000000;
+$grey: #222222;
 
 
 // Breakpoints
@@ -37,6 +38,7 @@ $large: 1440px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 1024px;
   background-color: $black;
 
   &__title {
@@ -106,5 +108,18 @@ $large: 1440px;
       height: 100%;
       width: 100%;
     }
+  }
+}
+
+.BottomContainer {
+  height: 1024px;
+  background-color: $grey;
+
+  @media only screen and (max-width: $medium) {
+    height: 1367px;
+  }
+
+  @media only screen and (max-width: $small) {
+    height: 1921px;
   }
 }
