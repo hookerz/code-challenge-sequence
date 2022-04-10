@@ -27,6 +27,7 @@ body {
 // Colors
 $black: #000000;
 $grey: #222222;
+$white: #FFFFFF;
 
 
 // Breakpoints
@@ -68,7 +69,8 @@ $large: 1440px;
     width: 200px;
     height: 64px;
     cursor: pointer;
-    > .button {
+
+    > div {
       font-size: 24px;
       font-weight: 700;
     }
@@ -121,5 +123,18 @@ $large: 1440px;
 
   @media only screen and (max-width: $small) {
     height: 1921px;
+  }
+
+
+
+  // Unicode star, couldn't find asset for original
+  .StarContainer {
+    display: flex;
+    justify-content: center;
+    padding-top: 120px;
+    > span {
+      font-size: 44px;
+      color: white;
+    }
   }
 }
