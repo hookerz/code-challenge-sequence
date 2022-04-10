@@ -65,9 +65,15 @@ $large: 1440px;
     color: white;
     width: 200px;
     height: 64px;
+    cursor: pointer;
     > .button {
       font-size: 24px;
       font-weight: 700;
+    }
+
+    &:hover {
+      background-color: white;
+      color: black;
     }
   }
   
