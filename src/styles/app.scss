@@ -171,7 +171,6 @@ $large: 1440px;
         max-width: 279px;
       }
       > p {
-        font-size: 20px;
         max-width: 316px;
       }
     }
@@ -189,8 +188,16 @@ $large: 1440px;
         row-gap: 60px;
     }
 
+    &__box {
+      > h1 {
+        font-size: 32px;
+      }
+      > p {
+        font-size: 18px;
+      }
+    }
+
     &__box:nth-of-type(1) {
-      min-height: 278px;
       grid-area: box1;
       > h1, p {
         max-width: 551px;
@@ -215,15 +222,17 @@ $large: 1440px;
     }
     &__box {
       max-width: 258px;
-      min-height: 399px;
-      margin: 40px 40px 0 40px;
+      min-height: 363px;
+      margin-bottom: 40px;
 
       > h1 {
         font-size: 32px;
+        line-height: 1.125;
       }
 
       > p {
         font-size: 16px;
+        line-height: 1.75;
       }
     }
   }
