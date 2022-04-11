@@ -125,7 +125,7 @@ export class Animation {
     // When the user is scrolled within the 0-400vh pinned view, Math.floor(scrollPosition/multiplier) will return a number 0-99 determining the image index of the sequence we should load. Offset by 1 since we don't have a frame0000.
     let imageToLoad = Math.floor(scrollPosition / multiplier) + 1;
     // Don't load anything if we're scrolled past the animation container
-    if (imageToLoad > 100) return;
+    if (imageToLoad > 100) return 100;
     const paddedNumber = String(imageToLoad).padStart(4, '0');
     return `<img src="/img/countdown/frame${paddedNumber}.jpg"/>`;
   }
