@@ -43,8 +43,8 @@ export class Animation {
   _updateKeyframe() {
     const { keyframe } = this;
     if (keyframe === 100) {
-      this.keyframe = 0;
-      return 0;
+      this.keyframe = 1;
+      return 1;
     } else {
       this.keyframe++;
       return this.keyframe;
