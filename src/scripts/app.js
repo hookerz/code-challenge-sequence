@@ -17,9 +17,7 @@ import '../styles/app.scss';
     let jumpToCardsButton = document.querySelector(
       '.TopContainer__buttonContainer'
     );
-    let gridContainer = document.querySelector(
-      '.BottomContainer__box'
-    );
+    let gridContainer = document.querySelector('.BottomContainer__box');
 
     // Edge case: On page refresh, if the user is scrolled past the bottom of the 400vh animation container, bottom gets set to a negative value.
     // TODO: Get reference to bottom of animation container relative to the top of the page

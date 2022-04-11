@@ -1,10 +1,9 @@
 # Description
 
-- Uses proper responsive styling for 1440px, 768px, and 375px
 - Event listeners are initialized in app.js, Used to pass the scroll position and set the animation container dimensions used in the animation class
 - Animation class handles turning the sequence of images into an animation
 - Uses [anime.js](https://animejs.com/documentation/) to handle keyframe sequencing and updating the DOM accordingly through a callback function
-- Star is actually a unicode character
+- Star is actually a unicode character, couldn't find asset
 
 # Bugs/Improvements
 

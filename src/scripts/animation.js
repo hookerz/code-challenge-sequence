@@ -56,10 +56,10 @@ export class Animation {
     this._numberOfImages = number;
   }
 
- 	/**
-	 * Starts the animation
-	 * @param {DOM element} container Empty div element which gets dynamically replaced with the animation 
-	 */ 
+  /**
+   * Starts the animation
+   * @param {DOM element} container Empty div element which gets dynamically replaced with the animation
+   */
   start(container) {
     if (!container) {
       throw new Error('no container');
@@ -78,11 +78,11 @@ export class Animation {
     });
   }
 
- 	/**
-	 * Starts the animation
-	 * @param {number} bottom The bottom coordinate of the 400vh container. Pulled from getBoundingClientRect()
+  /**
+   * Starts the animation
+   * @param {number} bottom The bottom coordinate of the 400vh container. Pulled from getBoundingClientRect()
    * TODO: throttle this since it's being called on resize
-	 */ 
+   */
   setAnimationContainerDimensions(bottom) {
     this.animationContainerBottom = bottom;
     const { numberOfImages } = this;
@@ -93,7 +93,7 @@ export class Animation {
    * Get the image corresponding to the keyframe index.
    * Ex. Keyframe 4 returns `0004` which returns the 4th image in the sequence
    * Deprecated since we are now binding to the scroll position
-	 */ 
+   */
   _getNextImage() {
     const { keyframe } = this;
     const paddedNumber = String(keyframe).padStart(4, '0');
@@ -104,7 +104,7 @@ export class Animation {
   /**
    * Loop this.keyframe between values 1 and 100
    * Deprecated since we are now binding to the scroll position
-	 */ 
+   */
   _updateKeyframe() {
     const { keyframe } = this;
     if (keyframe === 100) {
@@ -118,7 +118,7 @@ export class Animation {
 
   /**
    * Binds scroll position to the appropriate image
-	 */ 
+   */
   _getImageForScrollPosition() {
     const { scrollPosition, multiplier } = this;
     // This is the magic formula
