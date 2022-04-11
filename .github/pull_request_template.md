@@ -7,7 +7,6 @@
 
 # Bugs/Improvements
 
-- Currently, we only see the bottom of the last image in the sequence since we're so far scrolled past. We should subtract the height of the image from the bottom of the animation container when calculating the multiplier so we see the full last image as we scroll past the bottom of the container.  Important for small, wide screen sizes
 - Edge case: On page refresh, if the user is scrolled past the bottom of the 400vh animation container, bottom gets set to a negative value. TODO: Get reference to bottom of animation container relative to the top of the page, taking into account scroll position
 - Should throttle setAnimationContainerDimensions() since it's being called onResize
 
