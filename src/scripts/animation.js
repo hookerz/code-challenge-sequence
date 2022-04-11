@@ -22,7 +22,7 @@ export class Animation {
 
     // Anime.js constructor which updates the image each keyframe
     let ball = anime({
-      targets: '.TopContainer__animationContainer',
+      targets: '.AnimationContainer__animation',
       loop: true,
       autoplay: true,
       easing: 'linear',

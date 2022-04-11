@@ -3,7 +3,7 @@ import '../styles/app.scss';
 
 const animation = new Animation();
 const app = document.getElementById('app');
-let container = document.querySelector('.TopContainer__animationContainer');
+let container = document.querySelector('.AnimationContainer__animation');
 
 
 function initializeEventListeners() {
