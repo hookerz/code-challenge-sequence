@@ -6,8 +6,8 @@
 - Uses [anime.js](https://animejs.com/documentation/) to handle keyframe sequencing and updating the DOM accordingly through a callback function
 - Star is actually a unicode character
 
-
 # Bugs/Improvements
+
 - We should subtract the height of the image from the bottom of the animation container when calculating the multiplier so we see the full last image as we scroll past the bottom of the container. Currently, we only see the bottom of the last image in the sequence since we're so far scrolled past. Important for small, wide screen sizes
 - Grid Row/Column-gap is breaking on Firefox for the grid card section
 - Sass imports are broken for some reason, sorry!

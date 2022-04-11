@@ -1,7 +1,6 @@
 import { Animation } from './animation';
 import '../styles/app.scss';
 
-
 (function () {
   const animation = new Animation();
   const app = document.getElementById('app');
@@ -15,7 +14,9 @@ import '../styles/app.scss';
   }
 
   function initializeEventListeners() {
-    let jumpToCardsButton = document.querySelector('.TopContainer__buttonContainer');
+    let jumpToCardsButton = document.querySelector(
+      '.TopContainer__buttonContainer'
+    );
     let gridContainer = document.querySelector('.BottomContainer__box');
 
     // Edge case: On page refresh, if the user is scrolled past the bottom of the 400vh animation container, bottom gets set to a negative value.

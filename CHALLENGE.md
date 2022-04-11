@@ -28,9 +28,9 @@ Please complete as many steps as you are able to before your interview. Good luc
 
 ## References
 
-| Reference | Link |
-| --- | --- |
-| Challenge inspiration | https://www.apple.com/mac-studio/ |
-| Image sequence source | [src/public/img/countdown/](./src/public/img/countdown/) |
-| Sketch design file | https://www.sketch.com/s/c3e57c08-91c3-47fd-9009-5d8ce2fc2f03 |
-| Video source | [src/public/media/countdown.mp4](./src/public/media/countdown.mp4) |
+| Reference             | Link                                                               |
+| --------------------- | ------------------------------------------------------------------ |
+| Challenge inspiration | https://www.apple.com/mac-studio/                                  |
+| Image sequence source | [src/public/img/countdown/](./src/public/img/countdown/)           |
+| Sketch design file    | https://www.sketch.com/s/c3e57c08-91c3-47fd-9009-5d8ce2fc2f03      |
+| Video source          | [src/public/media/countdown.mp4](./src/public/media/countdown.mp4) |

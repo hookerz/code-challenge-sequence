@@ -51,17 +51,17 @@ export class Animation {
 
   get numberOfImages() {
     return this._numberOfImages;
-  }  
+  }
 
   set numberOfImages(number) {
     this._numberOfImages = number;
   }
-  
+
   start(container) {
     if (!container) {
       throw new Error('no container');
     }
-    
+
     const animation = this;
 
     // Anime.js constructor which uses a callback function to get the intended image at the scroll position and displays it
@@ -70,7 +70,8 @@ export class Animation {
       loop: true,
       autoplay: true,
       easing: 'linear',
-      update: () => container.innerHTML = animation._getImageForScrollPosition()
+      update: () =>
+        (container.innerHTML = animation._getImageForScrollPosition()),
     });
   }
 
@@ -83,7 +84,7 @@ export class Animation {
     this.multiplier = bottom / numberOfImages;
   }
 
-  // Get the image corresponding to the keyframe index. 
+  // Get the image corresponding to the keyframe index.
   // Ex. Keyframe 4 returns `0004` which returns the 4th image in the sequence
   // Deprecated since we are now binding to the scroll position
   _getNextImage() {
@@ -91,8 +92,8 @@ export class Animation {
     const paddedNumber = String(keyframe).padStart(4, '0');
     this._updateKeyframe();
     return `<img src="/img/countdown/frame${paddedNumber}.jpg"/>`;
-  }  
-  
+  }
+
   // Loop this.keyframe between values 1 and 100
   // Deprecated since we are now binding to the scroll position
   _updateKeyframe() {
