@@ -7,10 +7,10 @@ import '../styles/app.scss';
   const app = document.getElementById('app');
   let container = document.querySelector('.AnimationContainer__animation');
   let animationContainer = document.querySelector('.AnimationContainer');
+  let { bottom } = animationContainer.getBoundingClientRect();
 
   // Get dimensions of animation container since it is based off 400vh
   function setAnimationContainerDimensions() {
-    let { height, bottom } = animationContainer.getBoundingClientRect();
     animation.setAnimationContainerDimensions(bottom);
   }
 
@@ -33,7 +33,6 @@ import '../styles/app.scss';
 
     // When resizing, we should recalculate the animation container dimensions so the ball is based on the new 400vh size
     window.addEventListener('resize', (event) => {
-      let { bottom } = animationContainer.getBoundingClientRect();
       setAnimationContainerDimensions(bottom);
     });
 
@@ -51,7 +50,7 @@ import '../styles/app.scss';
   }
 
   if (app) {
-    setAnimationContainerDimensions();
+    setAnimationContainerDimensions(bottom);
     initializeEventListeners();
     animation.start(container);
   }

@@ -79,7 +79,7 @@ export class Animation {
   setAnimationContainerDimensions(bottom) {
     this.animationContainerBottom = bottom;
 
-    // Image to load = bottom / multiplier since we are starting the sequence from the very top of the page
+    // Image to load = bottom / multiplier since we are starting the sequence from scrollPosition = 0: the very top of the page
     const { numberOfImages } = this;
     this.multiplier = bottom / numberOfImages;
   }
