@@ -112,7 +112,7 @@ $large: 1440px;
 }
 
 .BottomContainer {
-  height: auto;
+  min-height: 1024px;
   background-color: $grey-2;
 
   // Unicode star, couldn't find asset for original
@@ -210,7 +210,6 @@ $large: 1440px;
 }
 
 .TopContainer__animationContainer {
-  width: 100px;
-  height: 100px;
-  background-color: green;
+  width: 100%;
+  height: 100%;
 }
