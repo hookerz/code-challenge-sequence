@@ -3,14 +3,14 @@
  */
 
 /**
- * Class for handling the playback of images
+ * Class for turning the sequence of images into an animation
  * @memberOf  BackgroundClasses
  */
 import anime from 'animejs';
 
 export class Animation {
   constructor() {
-    this.keyframe = 1; // Only allow values of [0 - 100]
+    this.keyframe = 1; // Only allow values between [1 - 100]
   }
 
   start(container) {
@@ -18,19 +18,20 @@ export class Animation {
       throw new Error('no container');
     }
     
-    let animation = this;
+    const animation = this;
 
-    // Anime.js constructor which updates the container with the image of the 
+    // Anime.js constructor which updates the image each keyframe
     let ball = anime({
       targets: '.TopContainer__animationContainer',
       loop: true,
-      easing: 'easeoutExpo',
-      duration: 10000,
+      autoplay: true,
+      easing: 'linear',
       update: () => container.innerHTML = animation._getNextImage()
     });
   }
 
-  // Get the image corresponding to the keyframe index. Ex. Keyframe 4 returns an image with `0004`
+  // Get the image corresponding to the keyframe index. 
+  // Ex. Keyframe 4 returns `0004` which returns the 4th image in the sequence
   _getNextImage() {
     const { keyframe } = this;
     const paddedNumber = String(keyframe).padStart(4, '0');
