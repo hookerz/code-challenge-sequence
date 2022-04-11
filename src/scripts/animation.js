@@ -25,7 +25,7 @@ export class Animation {
     
     const animation = this;
 
-    // Anime.js constructor which updates the image each keyframe
+    // Anime.js constructor which uses a callback function to get the intended image at the scroll position and displays it
     let ball = anime({
       targets: '.AnimationContainer__animation',
       loop: true,
