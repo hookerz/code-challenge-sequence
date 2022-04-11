@@ -74,6 +74,15 @@ export class Animation {
     });
   }
 
+  // TODO: throttle this since it's being called on resize
+  setAnimationContainerDimensions(bottom) {
+    this.animationContainerBottom = bottom;
+
+    // Image to load = bottom / multiplier since we are starting the sequence from scrollPosition = 0: the very top of the page
+    const { numberOfImages } = this;
+    this.multiplier = bottom / numberOfImages;
+  }
+
   // Get the image corresponding to the keyframe index. 
   // Ex. Keyframe 4 returns `0004` which returns the 4th image in the sequence
   // Deprecated since we are now binding to the scroll position
@@ -107,14 +116,5 @@ export class Animation {
     if (imageToLoad > 100) return;
     const paddedNumber = String(imageToLoad).padStart(4, '0');
     return `<img src="/img/countdown/frame${paddedNumber}.jpg"/>`;
-  }
-
-  // TODO: throttle this since it's being called on resize
-  setAnimationContainerDimensions(bottom) {
-    this.animationContainerBottom = bottom;
-
-    // Image to load = bottom / multiplier since we are starting the sequence from scrollPosition = 0: the very top of the page
-    const { numberOfImages } = this;
-    this.multiplier = bottom / numberOfImages;
   }
 }
