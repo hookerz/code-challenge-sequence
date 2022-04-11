@@ -12,7 +12,7 @@ export class Animation {
     this.keyframe = 1; // Only allow values between [1 - 100]
     this.scrollPosition = 0; // ScrollY of the page
     this.animationContainerBottom = 0; // The bottom of the animation container, equal to 400vh + height of TopContainer (title, and button), set on app load and resize
-    this.multiplier = 0; // Multipler = bottom / numberOfImages. Splits the 400vh area into 100 different sections, displaying an image corresponding to the scroll position for each
+    this.multiplier = 0; // Multipler = animationContainerBottom / numberOfImages. Splits the area into 100 different sections, displaying an image corresponding to the scroll position for each
     this.numberOfImages = 100; // 100 total images
   }
 
@@ -124,7 +124,7 @@ export class Animation {
     // This is the magic formula
     // When the user is scrolled within the 0-400vh pinned view, Math.floor(scrollPosition/multiplier) will return a number 0-99 determining the image index of the sequence we should load. Offset by 1 since we don't have a frame0000.
     let imageToLoad = Math.floor(scrollPosition / multiplier) + 1;
-    // Don't load anything if we're scrolled past the animation container
+    // Keep the last image on the page if we're past the final scroll point to prevent shifting of elements
     if (imageToLoad > 100) return 100;
     const paddedNumber = String(imageToLoad).padStart(4, '0');
     return `<img src="/img/countdown/frame${paddedNumber}.jpg"/>`;
