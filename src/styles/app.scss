@@ -1,17 +1,26 @@
+/**
+ * Sass Importer
+ *
+ * Select the SASS partials to be compiled for this project. SASS files
+ * are compiled and included in the order they are listed.
+*/
+
+// Import Global Partials
+@import 'settings';
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
-/*
- * TODO
- * Replace this code with your own to
- * implement the functionality described in
- * CHALLENGE.md
- */
-
 html,
-body {
+body,
+h1,
+p {
   margin: 0;
 }
 
 body {
   font: 20px 'Lato', sans-serif;
 }
+
+// Partial View SASS files
+@import './partials/_topContainer';
+@import './partials/_animationContainer';
+@import './partials/_bottomContainer';

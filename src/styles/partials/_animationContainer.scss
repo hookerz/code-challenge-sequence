@@ -1,0 +1,21 @@
+.AnimationContainer {
+  height: 400vh;
+  width: 100%;
+  background-color: black;
+
+  &__sticky {
+    position: sticky;
+    top: 25vh;
+  }
+
+  &__animation {
+    margin: auto;
+    max-width: 1069px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      position: sticky;
+    }
+  }
+}

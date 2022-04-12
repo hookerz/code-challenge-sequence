@@ -1,0 +1,126 @@
+.BottomContainer {
+  min-height: 1024px;
+  background-color: $grey-2;
+
+  @media only screen and (max-width: $small-breakpoint) {
+    padding-bottom: 324px;
+  }
+
+  @media only screen and (min-width: $small-breakpoint) and (max-width: $medium-breakpoint) {
+    padding-bottom: 319px;
+  }
+
+  // Unicode star, couldn't find asset for original
+  &__starContainer {
+    display: flex;
+    justify-content: center;
+    padding: 120px 0;
+    > span {
+      font-size: 60px;
+      color: white;
+    }
+  }
+
+  &__box {
+    color: white;
+    background-color: $grey-1;
+    padding: 36px 36px 0 36px;
+    > h1 {
+      margin-bottom: 30px;
+      line-height: 1.111;
+    }
+    > p {
+      line-height: 1.4;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+    > p:nth-of-type(1) {
+      margin-bottom: 24px;
+    }
+    &:nth-child(1) {
+      background-color: $blue;
+    }
+  }
+
+  @media only screen and (min-width: $medium-breakpoint) {
+    &__grid {
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    &__box {
+      min-height: 390px;
+      max-width: 389px;
+      > h1 {
+        font-size: 36px;
+        max-width: 279px;
+      }
+      > p {
+        max-width: 316px;
+      }
+    }
+  }
+
+  @media only screen and (min-width: $small-breakpoint) and (max-width: $medium-breakpoint) {
+    &__grid {
+      margin: 0 40px;
+      display: grid;
+      max-width: 611px;
+      justify-content: center;
+      grid-template-areas:
+        'box1 box1'
+        'box2 box3';
+      grid-row-gap: 60px;
+      grid-column-gap: 60px;
+    }
+
+    &__box {
+      > h1 {
+        font-size: 32px;
+      }
+      > p {
+        font-size: 18px;
+      }
+    }
+
+    &__box:nth-of-type(1) {
+      grid-area: box1;
+      > h1,
+      p {
+        max-width: 551px;
+      }
+    }
+    &__box:nth-of-type(2) {
+      grid-area: box2;
+      max-width: 275px;
+    }
+    &__box:nth-of-type(3) {
+      grid-area: box3;
+      max-width: 275px;
+    }
+  }
+
+  @media only screen and (max-width: $small-breakpoint) {
+    &__grid {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    &__box {
+      max-width: 258px;
+      min-height: 363px;
+      margin-bottom: 40px;
+
+      > h1 {
+        font-size: 32px;
+        line-height: 1.125;
+      }
+
+      > p {
+        font-size: 16px;
+        line-height: 1.75;
+      }
+    }
+  }
+}

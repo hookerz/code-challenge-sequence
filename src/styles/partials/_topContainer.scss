@@ -1,0 +1,65 @@
+.TopContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: $black;
+
+  &__title {
+    margin-top: 120px;
+    font-size: 72px;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+
+    @media only screen and (max-width: $medium-breakpoint) {
+      font-size: 64px;
+    }
+
+    @media only screen and (max-width: $small-breakpoint) {
+      font-size: 48px;
+    }
+  }
+
+  &__buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 60px 0;
+    border: 2px solid white;
+    border-radius: 5px;
+    color: white;
+    width: 200px;
+    height: 64px;
+    cursor: pointer;
+
+    > div {
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+  }
+
+  @media only screen and (max-width: $medium-breakpoint) {
+    &__buttonContainer {
+      height: 56px;
+      width: 184px;
+      > .button {
+        font-size: 22px;
+      }
+    }
+  }
+
+  @media only screen and (max-width: $small-breakpoint) {
+    &__buttonContainer {
+      height: 48px;
+      width: 161px;
+      > .button {
+        font-size: 18px;
+      }
+    }
+  }
+}
