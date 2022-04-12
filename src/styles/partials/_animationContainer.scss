@@ -3,10 +3,9 @@
   width: 100%;
   background-color: black;
 
-  &__stickyContainer {
+  &__sticky {
     position: sticky;
-    top: 0;
-    width: 100%;
+    top: 25vh;
   }
 
   &__animation {
