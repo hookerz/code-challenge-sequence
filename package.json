@@ -45,9 +45,7 @@
     "webpack-dev-server": "^3.11.2",
     "webpack-merge": "^5.8.0"
   },
-  "dependencies": {
-    "styled-components": "^5.3.5"
-  },
+  "dependencies": {},
   "engines": {
     "node": ">=10.13.0"
   }

@@ -1,0 +1,14 @@
+.layoutHorizontalPadding {
+  padding-left: 36px;
+  padding-right: 36px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-left: 72px;
+    padding-right: 72px;
+  }
+}
