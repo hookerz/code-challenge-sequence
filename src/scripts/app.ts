@@ -1,10 +1,5 @@
 import '../styles/app.scss';
 
-import { Animation } from './animation';
+import { HeroAnimator } from './heroAnimator';
 
-const animation: Animation = new Animation();
-const app = document.getElementById('app');
-
-if (app) {
-  animation.start(app);
-}
+const animation: HeroAnimator = new HeroAnimator();
