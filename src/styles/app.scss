@@ -1,17 +1,141 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-
-/*
- * TODO
- * Replace this code with your own to
- * implement the functionality described in
- * CHALLENGE.md
- */
+@import './breakpoints.scss';
+@import './colors.scss';
+@import './elements.scss';
+@import './fonts.scss';
+@import './layout.scss';
 
 html,
 body {
+  background-color: $black;
   margin: 0;
+  scroll-behavior: smooth !important;
 }
 
-body {
-  font: 20px 'Lato', sans-serif;
+.mainContainer {}
+
+.header {
+  @extend .layoutHorizontalPadding;
+
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding-top: 90px;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-top: 120px;
+  }
+}
+
+.heroContainer {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 320px;
+  padding-top: 60px;
+  position: sticky;
+  top: 0px;
+  width: 100%;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding-bottom: 256px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding-bottom: 64px;
+  }
+}
+
+.hero {
+  height: 316px;
+  width: 100%;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 432px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    max-width: 1024px;
+    height: 601px;
+  }
+
+  & img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+
+    @media (min-width: $breakpoint-tablet) {
+      object-fit: contain;
+    }
+  }
+}
+
+.contentContainer {
+  @extend .layoutHorizontalPadding;
+
+  background-color: $dark-grey;
+  padding-bottom: 320px;
+}
+
+.starContainer {
+  display: flex;
+  justify-content: center;
+  padding: 120px 0px;
+  width: 100%;
+}
+
+.star {
+  height: 40px;
+  width: 40px;
+
+  @media (min-width: $breakpoint-tablet) {
+    height: 44px;
+    width: 44px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    height: 48px;
+    width: 48px;
+  }
+}
+
+
+.cardsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  width: 100%;
+
+  @media (min-width: $breakpoint-tablet) and (max-width:$breakpoint-desktop) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    & div:nth-child(1) {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.card {
+  background-color: $light-grey;
+  padding: 24px;
+  flex: 1;
+
+  @media (min-width: $breakpoint-tablet) {
+    padding: 30px;
+  }
+
+  @media (min-width: $breakpoint-desktop) {
+    padding: 36px;
+  }
+
+  &.active {
+    background-color: $secondary;
+  }
 }
