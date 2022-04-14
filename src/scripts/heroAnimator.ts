@@ -56,7 +56,16 @@ export class HeroAnimator {
     const newFrame = Math.ceil(scrollYPosition / scrollHeightPerFrame);
 
     if (newFrame !== this.activeFrame) {
-      this.activeFrame = newFrame || 1; // If scroll lies on 0, it should render the first frame
+      this.activeFrame = newFrame;
+
+      if (newFrame <= 0) {
+        this.activeFrame = 1;
+      }
+
+      if (newFrame > TOTAL_FRAMES) {
+        this.activeFrame = TOTAL_FRAMES;
+      }
+
       this.updateImageAtDomUsingCurrentFrame();
     }
   }
