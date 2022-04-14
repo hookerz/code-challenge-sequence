@@ -21,6 +21,14 @@ export const getFilePathBasedOnFrameNumber = (frameNumber: number): string => {
   })}.jpg`;
 };
 
+export const getCurrentScrollPositionAtViewport = (): number => {
+  return window.scrollY;
+};
+
 export const getElementById = (id: string): HTMLElement | null => {
   return document.getElementById(id);
+};
+
+export const getViewportScrollableHeight = (): number => {
+  return document.documentElement.scrollHeight - window.innerHeight;
 };

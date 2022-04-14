@@ -1,14 +1,18 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-nocheck
 import {
+  getCurrentScrollPositionAtViewport,
   getElementById,
   getFilePathBasedOnFrameNumber,
+  getViewportScrollableHeight,
 } from '../src/scripts/countdown.helpers';
 import { HeroAnimator } from '../src/scripts/heroAnimator';
 
 jest.mock('../src/scripts/countdown.helpers.ts', () => ({
   ...jest.requireActual('../src/scripts/countdown.helpers.ts'),
+  getCurrentScrollPositionAtViewport: jest.fn(),
   getElementById: jest.fn(),
+  getViewportScrollableHeight: jest.fn(),
 }));
 
 describe('Hero Animator', () => {
@@ -24,7 +28,7 @@ describe('Hero Animator', () => {
       container.animator = new HeroAnimator();
       expect(container.animator.isAnimationRunning).toBeTruthy();
 
-      container.animator.stop();
+      container.animator.stopAnimation();
       delete container.container;
     });
 
@@ -49,7 +53,7 @@ describe('Hero Animator', () => {
         ])
       );
 
-      container.animator.stop();
+      container.animator.stopAnimation();
       delete container.container;
     });
 
@@ -67,7 +71,57 @@ describe('Hero Animator', () => {
       expect(container.animator.isAnimationRunning).toBeFalsy();
       expect(container.animator.imagesSwitchInteval).toBeNull();
 
-      container.animator.stop();
+      container.animator.stopAnimation();
+      delete container.container;
+    });
+
+    it('should update the active frame when triggering the scroll event', async () => {
+      const setAttributeMock = jest.fn();
+      getElementById.mockImplementation(() => ({
+        setAttribute: setAttributeMock,
+      }));
+
+      getCurrentScrollPositionAtViewport.mockImplementation(() => 51);
+      getViewportScrollableHeight.mockImplementation(() => 500);
+
+      const container = {};
+      container.animator = new HeroAnimator({
+        automaticallyStart: false,
+      });
+
+      container.animator.setFrameBasedOnScrollPosition();
+
+      expect(setAttributeMock).toHaveBeenCalledWith(
+        'src',
+        getFilePathBasedOnFrameNumber(11)
+      );
+
+      container.animator.stopAnimation();
+      delete container.container;
+    });
+
+    it('should render the first frame if scrolling to top', async () => {
+      const setAttributeMock = jest.fn();
+      getElementById.mockImplementation(() => ({
+        setAttribute: setAttributeMock,
+      }));
+
+      getCurrentScrollPositionAtViewport.mockImplementation(() => 0);
+      getViewportScrollableHeight.mockImplementation(() => 500);
+
+      const container = {};
+      container.animator = new HeroAnimator({
+        automaticallyStart: false,
+      });
+
+      container.animator.setFrameBasedOnScrollPosition();
+
+      expect(setAttributeMock).toHaveBeenCalledWith(
+        'src',
+        getFilePathBasedOnFrameNumber(1)
+      );
+
+      container.animator.stopAnimation();
       delete container.container;
     });
   });
