@@ -80,7 +80,7 @@ export class HeroAnimator {
     this.isAnimationRunning = true;
 
     this.imagesSwitchInteval = setInterval(() => {
-      if (this.activeFrame >= TOTAL_FRAMES) {
+      if (this.activeFrame > TOTAL_FRAMES) {
         this.stopAnimation();
         return;
       }
